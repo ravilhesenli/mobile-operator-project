@@ -70,7 +70,7 @@ from  subscribers s ;
 --8.Abonentlərdən ən çox şikayət edən 10 nəfərin adını və şikayət sayını göstər:
 Ekrana ad, soyad və ümumi şikayət sayı çıxsın.
 
-Hell 1 – join 
+Həll 1 – join 
 select s.name,s.surname,count(csr.description ) as say
 from subscribers s inner join complaints_and_support_requests csr
 on s.subscribers_id=csr.subscribers_id 
@@ -79,7 +79,7 @@ group by s.name,s.surname
 order by say desc
 fetch next 10 rows only;
 
-hell 2 - subquery
+Həll 2 - subquery
 select s.name,s.surname,
 (select count(csr.subscribers_id) from complaints_and_support_requests csr where s.subscribers_id=csr.subscribers_id
 and lower(DESCRIPTION) like '%issue%') as sikayet_sayi
@@ -88,7 +88,7 @@ order by sikayet_sayi desc
 fetch next 10 rows only;
 
 
-hell 3 – with 
+Həll 3 – with 
 with say as(select subscribers_id,count(subscribers_id) as sikayet_sayi from complaints_and_support_requests
 where lower(DESCRIPTION) like '%issue%'
 group by subscribers_id) select name, surname, sikayet_sayi from SUBSCRIBERS s join say t
@@ -136,14 +136,14 @@ where months_between(sysdate,si.insert_date)<=12;
 -- 13. Hər abonent üçün son 6 ayda edilən ödənişlərin məbləğini və xidmətlərin sayını göstər:
 --   Ekrana abonentin adı, soyadı, son 6 ayda edilən ödənişlərin məbləğini və xidmətlərin sayı haqqında informasiyalar çıxsın.
 
-Hell 1 - join
+Həll 1 - join
 select s.name,s.surname,sum(amount),count(p.subscribers_id)
 from subscribers s inner join payments p
 on s.subscribers_id=p.subscribers_id
 where months_between(sysdate,payment_date)<=6
 group by s.name,s.surname;
 
-hell 2 - subquery
+Həll 2 - subquery
 select s.name, s.surname,
        (select nvl(sum(p.amount), 0) from payments p 
         where p.subscribers_id = s.subscribers_id 
