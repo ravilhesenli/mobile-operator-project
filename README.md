@@ -1,4 +1,4 @@
-# 📱 Mobile Operator CRM & Billing Database Project
+#  Mobile Operator CRM & Billing Database Project
 
 Bu layihə, bir Mobil Operator şirkətinin abonentlərini, tarif planlarını, daxili/beynəlxalq zəng və SMS tarixçələrini, maliyyə ödənişlərini, cihaz məlumatlarını (IMEI/OS) və müştəri dəstək sorğularını (CRM) idarə etmək üçün nəzərdə tutulmuş **Oracle SQL verilənlər bazası modelidir**.
 
@@ -16,7 +16,7 @@ Layihədəki bütün cədvəllər Primary Key və Foreign Key constraint-ləri v
 
 ---
 
-## 🚀 Önə Çıxan Analitik Sorğular (Business Analytics)
+##  Önə Çıxan Analitik Sorğular (Business Analytics)
 Biznes idarəçiliyi və marketinq qərarlarının qəbul edilməsi üçün hazırlanmış 15 sorğudan bəzi mühüm nümunələr:
 
 ### 1. Müştəri Seqmentasiyası (Yaş və Cinsiyyət Bölgüsü)
